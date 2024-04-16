@@ -1,0 +1,94 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+.container-button {
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+}
+
+.carrossel-button-next {
+  margin: 10px;
+}
+
+.carrossel-button-preview {
+  margin: 10px;
+}
+
+span {
+  font-weight: bold;
+  margin: 100px;
+  border: #61dafbaa solid pink;
+}
+
+body {
+  background-color: #888;
+}
+
+h1 {
+  color: white;
+}
+
+.title-stack {
+  font-size: 20pt;
+  color: white;
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+
+.lista-adicao {
+  border: 2px solid black;
+  border-radius: 5px;
+  background-color: white;
+  padding: 70px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+}
+
+.lista-adicao button {
+  margin: 10px;
+}
+
+.lista-adicao button:hover {
+  background-color: rgb(236, 247, 247);
+}
