@@ -1,30 +1,50 @@
 # React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Exercicio de revisão
+## Passo 1 - Adicionar botão e input
+   
+    // return (
+    //   <>
+    //     <h1>Caixa de ferramentas de uma Pessoa Desenvolvedora</h1>
+    //     <h2>{toolKit[index]}</h2>
+    //     <button onClick={handlePreviousClick}>Anterior</button>
+    //     <button onClick={handleNextClick}>Próximo</button>
+        <section>
+          <h3>Adicione novas ferramentas:</h3>
+          <input />
+          <button>Adicionar</button>
+        </section>
+    //     </>
+    //   );
+    // }
+  
+    // export default App;
 
-Currently, two official plugins are available:
+## Passo 2 - Criando um estado
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+    function App() {
+      const [stacks, setStacks] = useState([
+        'JavaScript',
+        'TypeScript',
+        'React',
+        'HTML',
+        'CSS',
+        'Node',
+      ])
+      const [index, setIndex] = useState(0);
+      const [inputText, setInputText] = useState(''); 
+      
 
-## Expanding the ESLint configuration
+## Passo 3 - Criando um estado para armazenar o valor do input & Passo 4 - Implementando a funcionalidade de adicionar itens à lista
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+         <input
+          type="text"
+          value={inputText}
+          onChange={(e) => setInputText(e.target.value)}
+          />
+        <button onClick={() => {
+          if (inputText !== '') {
+            setStacks([...stacks, inputText]); // acrescentando stacks + input  <-- ESSA É A IMPLEMENTAÇÃO
+            setInputText(''); // Quando adcionado o input fica vazio
+          }
+        }}>
