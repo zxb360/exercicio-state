@@ -1,0 +1,10 @@
+.label-input {
+    display: flex;
+    flex-flow: column wrap;
+    align-content: space-around;
+    align-items: flex-end;
+}
+
+.label-input input {
+    margin-left: 20px;
+}

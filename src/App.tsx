@@ -1,8 +1,9 @@
 import { useState } from 'react'
 import './App.css'
+import Formulario from './components/Form/Formulario';
 
 function App() {
-  const [stacks, setStacks] = useState([
+  const [books, setBooks] = useState([
     'JavaScript',
     'TypeScript',
     'React',
@@ -14,7 +15,7 @@ function App() {
   const [inputText, setInputText] = useState(''); 
 
   function carrosselHandleClickNext() {
-    if (index + 1 < stacks.length) {
+    if (index + 1 < books.length) {
       setIndex(index + 1);  // acrescenta mais um para index
     } else {
       setIndex(0);
@@ -25,14 +26,14 @@ function App() {
     if (index - 1 >= 0) {
       setIndex(index - 1);
     } else {
-      setIndex(stacks.length - 1);
+      setIndex(books.length - 1);
     }
   }
 
   return (
     <>
       <section className='lista-adicao'>
-        <h2>Adicione Stacks</h2>
+        <h2 style={{color: 'black'}}>Adicione Stacks</h2>
         <input
           type="text"
           value={inputText}
@@ -40,7 +41,7 @@ function App() {
           />
         <button onClick={() => {
           if (inputText !== '') {
-            setStacks([...stacks, inputText]); // acrescentando stacks + input
+            setBooks([...books, inputText]); // acrescentando stacks + input
             setInputText(''); // Quando adcionado o input fica vazio
           }
         }}>
@@ -48,7 +49,7 @@ function App() {
         </button>
       </section>
       <h1>Carrossel de stack</h1>
-      <span className='title-stack'>{stacks[index]}</span>
+      <span className='title-stack'>{books[index]}</span>
       <div className='container-button'>
         <div className='carrossel-button-next'>
           <button onClick={carrosselHandleClickNext}>
@@ -61,7 +62,9 @@ function App() {
           </button>
         </div>
       </div>
-
+      <section>
+        <Formulario />
+      </section>
     </>
   )
 }
