@@ -8,7 +8,7 @@ export default function Formulario() {
     const [name, setName] = useState("");
     const [endereco, setEndereco] = useState("");
     const [show, setShow] = useState(false);
-    console.log(show);
+    const [schooling, setSchooling] = useState("Médio");
     
 
     // const show = true;       Depois fazer botão para cadastrar toggle
@@ -42,7 +42,19 @@ export default function Formulario() {
                                     value={endereco}
                                     onChange={({ target }) => setEndereco(target.value)}
                                     />
-                        </label>    
+                        </label>
+                        <label htmlFor="Escolaridade">
+                            Escolaridade:
+                            <select
+                                id="Escolaridade"
+                                value={schooling}
+                                onChange={({ target }) => setSchooling(target.value)}
+                                >
+                                    <option value="Médio">Médio</option>
+                                    <option value="Superior">Superior</option>
+                                    <option value="Pós-Graduação">Pós-Graduação</option>
+                            </select>
+                        </label> 
                     </div>
                 </>
             ) : (

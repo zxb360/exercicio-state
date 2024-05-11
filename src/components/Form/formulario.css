@@ -8,3 +8,7 @@
 .label-input input {
     margin-left: 20px;
 }
+
+.label-input select {
+    margin-left: 117px;
+}
