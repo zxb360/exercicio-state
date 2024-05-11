@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import './App.css'
 import Formulario from './components/Form/Formulario';
+import Header from './components/Header/Header';
 
 function App() {
   const [books, setBooks] = useState([
@@ -32,8 +33,11 @@ function App() {
 
   return (
     <>
+      <Header>
+        <p>tudo tooo...</p>
+      </Header>
       <section className='lista-adicao'>
-        <h2 style={{color: 'black'}}>Adicione Stacks</h2>
+        <h2 style={{color: 'black', fontSize: 55, lineHeight: 0.5 }}>Adicione Stacks</h2>
         <input
           type="text"
           value={inputText}

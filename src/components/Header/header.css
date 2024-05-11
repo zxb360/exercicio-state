@@ -1,0 +1,6 @@
+.header {
+    height: 60vh;
+    background-image: url('../../../public/force99-3.jpeg');
+    background-size: cover;
+    background-position: top;
+}
